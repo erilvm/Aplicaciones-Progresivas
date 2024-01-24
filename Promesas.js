@@ -1,9 +1,21 @@
-//ejercicio3.1 una pagina nuestra la que deseamos
+// Ejercicio4 
 
-fetch('https://www.google.com.mx/?hl=es')
-.then(resp => resp.text())
-.then(html => {
-    document.open()
-    document.write(html)
-    document.close()
+let user  ={
+    name: "Erika",
+    age: 21
+}
+
+fetch('https://reqres.in/api/users', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+
+.then(resp => resp.json())
+.then(console.log)
+.catch(error => {
+    console.log('error en la peticion');
+    console.log(error)
 })
