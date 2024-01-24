@@ -1,10 +1,14 @@
-//fetch 7
+//fetch 7.1 = pagina de pokemon
 
 fetch('https:fakestoreapi.com/products/1')
 .then(resp => {
-
-     resp.json().then(console.log)
+     if (resp.ok) {
+          return resp.json()
+     } else {
+          throw new Error('NO existe el producto')
+     }
      })
+     .then(console.log)
      .catch(err => {
       console.log('Error en la peticion')
       console.log(err)
