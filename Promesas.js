@@ -1,21 +1,14 @@
-//fetch 6
+//fetch 7
 
 fetch('https:fakestoreapi.com/products/1')
 .then(resp => {
 
-     resp.clone().json().then(data => {
-        console.log(data);
+     resp.json().then(console.log)
      })
-     resp.clone().json().then(data => {
-        console.log(data);
+     .catch(err => {
+      console.log('Error en la peticion')
+      console.log(err)
      })
-     resp.json().then(data => {
-        console.log(data);
-        
-     })
-    }
-)
-
-
+    
 
 
