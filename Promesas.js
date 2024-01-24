@@ -1,17 +1,8 @@
-//Promesas 2
 
-promesaExitosa.then((mensaje) => {
-    console.log(mensaje);
-}).catch((error) => {
-    console.error(error);
-});
+// Promesas 1
 
-let promesaConError = new Promise((resolve, reject) => {
-    reject("algo salio mal..");
-
-});
-
-promesaConError.then((mensaje) => { console.log(mensaje);
-}).catch((error) => {
-    console.error(error);
+let promesaExitosa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("PROMESA EXITOSA");
+    }, 3000);
 });
